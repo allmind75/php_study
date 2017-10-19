@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>성적처리 프로그램</title>
+	<link rel="stylesheet" href="font.css">
+</head>
+
+<script>
+	function cal_jumsu() {
+		form1.total.value = Number(form1.kor.value) + Number(form1.eng.value) + Number(form1.math.value);
+		form1.avg.value = (form1.total.value / 3.).toFixed(1);		//.toFixed(1)소수점 1자리까지
+	}
+
+	function check() {
+
+		if(form1.name.value == "") {
+			alert("이름을 입력해주세요.");
+		} else if(form1.kor.value == "") {
+			alert("국어점수를 입력해주세요.");
+		} else if(form1.eng.value == "") {
+			alert("영어점수를 입력해주세요.");
+		} else if(form1.math.value == "") {
+			alert("수학점수를 입력해주세요.");
+		} else {
+			return true;
+		}
+
+		return false;
+	}
+</script>
+
+<body>
+
+	<form name="form1" method="post" action="sj_insert.php" onsubmit="return check()">
+
+		<table width="300" border="1" cellpadding="1" cellspacing="0" bgcolor="lightyellow">
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">이름</td>
+				<td width="200">
+					<input type="text" name="name" size="20">
+				</td>
+			</tr>
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">국어</td>
+				<td width="200">
+					<input type="text" name="kor" size="6" onChange="cal_jumsu();">
+				</td>
+			</tr>
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">영어</td>
+				<td width="200">
+					<input type="text" name="eng" size="6" onChange="cal_jumsu();">
+				</td>
+			</tr>
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">수학</td>
+				<td width="200">
+					<input type="text" name="math" size="6" onChange="cal_jumsu();">
+				</td>
+			</tr>
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">총점</td>
+				<td width="200">
+					<input type="text" name="total" size="6" readonly style="border:0;background-color:#ffffe0">
+				</td>
+			</tr>
+			<tr>
+				<td width="100" align="center" bgcolor="lightblue">평균</td>
+				<td width="200">
+					<input type="text" name="avg" size="6" readonly style="border:0;background-color:#ffffe0">
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table width="300" border="0">
+			<tr>
+				<td align="center">
+					<input type="submit" value="등록"> &nbsp
+					<input type="button" value="뒤로가기" onclick="history.back();">
+				</td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+
+</html>
