@@ -15,21 +15,10 @@
     $query.= "('$name', $kor, $eng, $math, $total, $avg)";
 
     //query 실행
-    mysql_query("set names utf8");      //utf 8 설정
     $result = mysql_query($query);
     if(!$result) exit("SQL Query Error");
 
     mysql_close($connector);
+
  ?>
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
-  </body>
-</html>
+<script>location.href="sj_list.php"</script>

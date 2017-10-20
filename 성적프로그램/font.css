@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 A:link		{	COLOR: blue; TEXT-DECORATION: none	}
 A:visited	{	COLOR: black; TEXT-DECORATION: none	}
 A:hover		{	COLOR: blue; TEXT-DECORATION: underline	}
@@ -11,15 +13,15 @@ TD {	FONT-SIZE: 9pt }
 	FONT-SIZE: 9pt; BORDER-LEFT: #666666 1px solid;
 	COLOR: #666666;
 	BORDER-BOTTOM: #666666 1px solid;
-	face: µ¸¿ò
+	face: ï¿½ï¿½ï¿½ï¿½
 }
 
 .button{
     BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid;	FONT-SIZE: 9pt; BORDER-LEFT: #666666 1px solid; FONT-SIZE: 9pt;
-	COLOR: #333333;	 BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #666666 1px solid; HEIGHT: 17px; WIDTH: 80px; face: µ¸¿ò
+	COLOR: #333333;	 BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #666666 1px solid; HEIGHT: 17px; WIDTH: 80px; face: ï¿½ï¿½ï¿½ï¿½
 }
 
-BODY	{ 
+BODY	{
 scrollbar-face-color: #ffffff;
 scrollbar-shadow-color: #EEC0E;
 scrollbar-highlight-color: #EEC0E;
