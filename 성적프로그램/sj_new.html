@@ -17,12 +17,16 @@
 
 		if(form1.name.value == "") {
 			alert("이름을 입력해주세요.");
+			form1.name.focus();
 		} else if(form1.kor.value == "") {
 			alert("국어점수를 입력해주세요.");
+			form1.kor.focus();
 		} else if(form1.eng.value == "") {
 			alert("영어점수를 입력해주세요.");
+			form1.eng.focus();
 		} else if(form1.math.value == "") {
 			alert("수학점수를 입력해주세요.");
+			form1.math.focus();
 		} else {
 			return true;
 		}
