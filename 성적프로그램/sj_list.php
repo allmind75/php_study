@@ -33,14 +33,14 @@
 
 		<?php
 				//paging========================================================================
-				$page 			= $_GET[page];								//현재 페이지 번호
-				$perPageNum = $_GET[perPageNum];					//한 페이지에 표시할 데이터 수
+				$page 			= $_GET[page];				//현재 페이지 번호
+				$perPageNum = $_GET[perPageNum];	//한 페이지에 표시할 데이터 수
 
 				if($page == null || $page <= 0) {
-					$page = 1;															//page 기본값 1
+					$page = 1;											//page 기본값 1
 				}
 				if($perPageNum == null || $perPageNum <= 0 || $perPageNum > 100) {
-					$perPageNum = 10;												//perPageNum 기본값 10
+					$perPageNum = 10;								//perPageNum 기본값 10
 				}
 				$pageStart = ($page - 1) * $perPageNum;
 				//=============================================================================
@@ -58,10 +58,10 @@
 				$result = mysql_query($query);
 				if(!$result) exit("SQL Query Error");
 
-				$count = mysql_num_rows($result);				//총 rows 수
+				$count = mysql_num_rows($result);		//총 rows 수
 
 				for($i=0 ; $i < $count ; $i++) {
-					$row = mysql_fetch_array($result);			//데이티베이스의 필드이름을 값의 key로 가져옴
+					$row = mysql_fetch_array($result);	//데이티베이스의 필드이름을 값의 key로 가져옴
 					echo("
 						<tr bgcolor='lightyellow'>
 							<td width='50'>$row[num]</td>
@@ -83,13 +83,13 @@
 				$countQuery = "SELECT num FROM grade";
 				$countResult = mysql_query($countQuery);
 				if(!$countResult) exit("SQL Query Error");
-				$totalCount = mysql_num_rows($countResult);												//전체 데이터 수
+				$totalCount = mysql_num_rows($countResult);		//전체 데이터 수
 
-				$displayPageNum = 5;																							//표시할 페이지 번호 수
-				$endPage = ceil($page / $displayPageNum) * $displayPageNum;				//페이징 끝 번호
-				$startPage = ($endPage - $displayPageNum) + 1;										//페이징 시작 번호
+				$displayPageNum = 5;	//표시할 페이지 번호 수
+				$endPage = ceil($page / $displayPageNum) * $displayPageNum;		//페이징 끝 번호
+				$startPage = ($endPage - $displayPageNum) + 1;	//페이징 시작 번호
 
-				$temp = ceil($totalCount / $perPageNum);													//전체 데이터 수를 이용해서 endPage 계산
+				$temp = ceil($totalCount / $perPageNum);	//전체 데이터 수를 이용해서 endPage 계산
 				if($endPage > $temp) $endPage = $temp;
 
 				$prev = ($startPage == 1) ? false : true;
