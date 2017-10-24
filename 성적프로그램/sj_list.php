@@ -33,14 +33,14 @@
 
 		<?php
 				//paging========================================================================
-				$page 			= $_GET[page];				//현재 페이지 번호
+				$page 			= $_GET[page];	//현재 페이지 번호
 				$perPageNum = $_GET[perPageNum];	//한 페이지에 표시할 데이터 수
 
 				if($page == null || $page <= 0) {
-					$page = 1;											//page 기본값 1
+					$page = 1;	//page 기본값 1
 				}
 				if($perPageNum == null || $perPageNum <= 0 || $perPageNum > 100) {
-					$perPageNum = 10;								//perPageNum 기본값 10
+					$perPageNum = 10;		//perPageNum 기본값 10
 				}
 				$pageStart = ($page - 1) * $perPageNum;
 				//=============================================================================
@@ -85,7 +85,7 @@
 				if(!$countResult) exit("SQL Query Error");
 				$totalCount = mysql_num_rows($countResult);		//전체 데이터 수
 
-				$displayPageNum = 5;	//표시할 페이지 번호 수
+				$displayPageNum = 5;		//표시할 페이지 번호 수
 				$endPage = ceil($page / $displayPageNum) * $displayPageNum;		//페이징 끝 번호
 				$startPage = ($endPage - $displayPageNum) + 1;	//페이징 시작 번호
 
