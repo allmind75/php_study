@@ -30,3 +30,16 @@ scrollbar-darkshadow-color: #ffffff;
 scrollbar-track-color: #ffffff;
 scrollbar-arrow-color: #EEC0E;
 }
+
+
+.page {
+	font-size: 18px;
+	border: 1px solid black;
+	margin: 1px 3px;
+	padding: 1px 8px;
+}
+
+.active {
+	background: blue;
+	color: white !important;
+}
