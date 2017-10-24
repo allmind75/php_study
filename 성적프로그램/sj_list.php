@@ -32,7 +32,7 @@
 		</tr>
 
 		<?php
-				//paging
+				//paging========================================================================
 				$page 			= $_GET[page];								//현재 페이지 번호
 				$perPageNum = $_GET[perPageNum];					//한 페이지에 표시할 데이터 수
 
@@ -43,11 +43,11 @@
 					$perPageNum = 10;												//perPageNum 기본값 10
 				}
 				$pageStart = ($page - 1) * $perPageNum;
-				//
+				//=============================================================================
 
 
 
-				//데이터 표시
+				//데이터 표시=====================================================================================
 				$searchName = $_POST[searchName];
 				if(!$searchName) {
 					$query = "SELECT * FROM grade ORDER BY num DESC LIMIT $pageStart, $perPageNum";
@@ -75,11 +75,11 @@
 						</tr>
 					");
 				}
-				//
+				//====================================================================================================
 
 
 
-				//paging algorithm
+				//paging algorithm=====================================================================================
 				$countQuery = "SELECT num FROM grade";
 				$countResult = mysql_query($countQuery);
 				if(!$countResult) exit("SQL Query Error");
@@ -115,7 +115,7 @@
 					echo("<a class='page' href='sj_list.php?page=$nextPage'> > </a>");
 					echo("<a class='page' href='sj_list.php?page=$temp'> &raquo; </a>");
 				}
-
+				//=========================================================================================================
 
 
 
