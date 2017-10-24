@@ -1,5 +1,6 @@
 <?php
 	include "common.php";
+	$searchName = $_POST[searchName];
 ?>
 
 <!DOCTYPE html>
@@ -48,11 +49,11 @@
 
 
 				//데이터 표시=====================================================================================
-				$searchName = $_POST[searchName];
+
 				if(!$searchName) {
 					$query = "SELECT * FROM grade ORDER BY num DESC LIMIT $pageStart, $perPageNum";
 				} else {
-					$query = "SELECT * FROM grade WHERE name LIKE '%$searchName%' ORDER BY num DESC";
+					$query = "SELECT * FROM grade WHERE name LIKE '%$searchName%' ORDER BY num DESC LIMIT $pageStart, $perPageNum";
 				}
 
 				$result = mysql_query($query);
@@ -126,9 +127,9 @@
 
 
 		</table>
-		<h1>totalCount = <?=$totalCount?></h1>
-		<h1>startPage = <?=$startPage?></h1>
-		<h1>endPage = <?=$endPage?></h1>
+		<h3>전체 데이터 수 - totalCount = <?=$totalCount?></h3>
+		<h3>시작 페이지 번호 - startPage = <?=$startPage?></h3>
+		<h3>현재 표시하는 페이저 번호 기준 마지막 번호 - endPage = <?=$endPage?></h3>
 
 </body>
 
